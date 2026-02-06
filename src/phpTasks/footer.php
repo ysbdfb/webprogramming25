@@ -1,7 +1,13 @@
 <footer>
-        <p>&copy; 2025 Your Website. All rights reserved.</p>
+    <?php
+    $filename = basename($_SERVER['PHP_SELF']);
 
-        <!-- Your footer content goes here -->
-    </footer>
+    $last_modified = filemtime($filename);
+
+    $formatted_date = date("d-m-Y H:i:s", $last_modified);
+
+    echo "Last change of ($filename) was: $formatted_date";
+    ?>
+</footer>
 </body>
 </html>
